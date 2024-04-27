@@ -1,5 +1,4 @@
 using Godot;
-using System;
 
 public partial class MySprite2D : Sprite2D
 {
@@ -14,8 +13,9 @@ public partial class MySprite2D : Sprite2D
 		if (Input.IsActionPressed("ui_right"))
 			direction = 1;
 		Rotation += _angularSpeed * direction * (float)delta;
+		
 		var velocity = Vector2.Zero;
-		if (Inpout.IsActionPressed("ui_up"))
+		if (Input.IsActionPressed("ui_up"))
 			velocity = Vector2.Up.Rotated(Rotation) * _speed;
 		Position += velocity * (float)delta;
 	}
